@@ -42,9 +42,9 @@ def cubicSplineInterpolate(x_axis,y_axis,z_axis):
     dz=[]
     matrix=[]
     '''
-        produce square matrix look like :
+        produce square matrix looks like :
         [[2.0, 0.5, 0.0, 0.0], [0.5, 2.0, 0.5, 0.0], [0.0, 0.5, 2.0, 0.5], [0.0, 0.0, 2.0, 0.5]]
-        the classes of the matrix depend on length of x_axis(number of nodes)
+        the classes of the matrix depends on the length of x_axis(number of nodes)
     '''
     n=2
     while n<len(x_axis):
@@ -118,8 +118,8 @@ def func(x1,x2,t,v1,v2,t1,t2):
 '''
     note: 
     too many points interpolate points make your computer slack.
-    To interpolate high length input parameters,
-    please switch to curve plot.
+    To interpolate large number of input parameters,
+    please switch to ax.plot().
 '''
 def plotCubicSpline(U,V,W,x_axis,y_axis,z_axis):
     m=1
