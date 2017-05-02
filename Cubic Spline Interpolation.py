@@ -6,8 +6,8 @@ Created on 2017/04/28
 @version: 1.0
 @contact: chenyj@bcc.ac.cn
 
-Cubic Spline Interpolation is a useful method to interpolate curve.
-This source code was designed to draw 3D line.
+Cubic Spline Interpolation provides numeric computing formula to interpolate curve.
+This source code was designed to draw a 3D curve.
 If you have any question or optimized idea, welcome to contact me.
 
 '''
