@@ -1,6 +1,6 @@
 # cubic-spline-interpolation
-Prerequest:
+Prerequisite:
 Python
-Matplotlib
-Numpy
-Scipy 
+1. Matplotlib
+2. Numpy
+3. Scipy 
