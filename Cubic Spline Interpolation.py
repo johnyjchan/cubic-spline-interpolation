@@ -41,11 +41,6 @@ def cubicSplineInterpolate(x_axis,y_axis,z_axis):
     dy=[]
     dz=[]
     matrix=[]
-    '''
-        produce square matrix looks like :
-        [[2.0, 0.5, 0.0, 0.0], [0.5, 2.0, 0.5, 0.0], [0.0, 0.5, 2.0, 0.5], [0.0, 0.0, 2.0, 0.5]]
-        the classes of the matrix depends on the length of x_axis(number of nodes)
-    '''
     n=2
     while n<len(x_axis):
         dx.append(3*(x_axis[n]-2*x_axis[n-1]+x_axis[n-2]))
@@ -53,7 +48,11 @@ def cubicSplineInterpolate(x_axis,y_axis,z_axis):
         dz.append(3*(z_axis[n]-2*z_axis[n-1]+z_axis[n-2]))
         n=n+1
         
-    
+    '''
+        produce square matrix looks like :
+        [[2.0, 0.5, 0.0, 0.0], [0.5, 2.0, 0.5, 0.0], [0.0, 0.5, 2.0, 0.5], [0.0, 0.0, 2.0, 0.5]]
+        the classes of the matrix depends on the length of x_axis(number of nodes)
+    '''
     matrix.append([float(2), float(0.5)])
     for m in range(len(x_axis)-4):
         matrix[0].append(float(0))                
@@ -69,9 +68,8 @@ def cubicSplineInterpolate(x_axis,y_axis,z_axis):
         
         for m in range(len(x_axis)-n-3):
             matrix[n-1].append(float(0)) 
-        
         n=n+1
-    
+        
     matrix.append([])
     for m in range(n-2):
         matrix[n-1].append(float(0))    
