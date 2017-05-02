@@ -11,7 +11,6 @@ This source code was designed to draw a 3D curve.
 If you have any question or optimized idea, welcome to contact me.
 
 '''
-import csv
 import math
 import numpy as np
 import matplotlib as mpl
