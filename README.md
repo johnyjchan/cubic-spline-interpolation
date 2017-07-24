@@ -4,4 +4,4 @@ Python
 1. Matplotlib
 2. Numpy
 3. Scipy 
-![image](https://github.com/johnyjchan/cubic-spline-interpolation/screenshots.png)
+![image](https://github.com/johnyjchan/cubic-spline-interpolation/screenshot.png)
