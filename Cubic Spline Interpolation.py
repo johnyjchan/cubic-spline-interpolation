@@ -17,8 +17,6 @@ import matplotlib as mpl
 from mpl_toolkits.mplot3d import axes3d
 import matplotlib.pyplot as plt
 from numpy import matrix, average
-import pprint
-import scipy
 import scipy.linalg 
 
 # Parameters
@@ -75,14 +73,12 @@ def cubicSplineInterpolate(x_axis,y_axis,z_axis):
     matrix[n-1].append(float(0.5))    
     matrix[n-1].append(float(2))
     
-    #validate
-    #pprint.pprint(matrix)
+
     '''
         LU Factorization may not be optimal method to solve this regular matrix.
         If you guys have better idea to solve the Equation, please contact me.
     '''
     P, L, U = doLUFactorization(matrix)
-    #pprint.pprint(np.dot(np.dot(P,L),U))
     u=solveEquations(P,L,U,dx)
     v=solveEquations(P,L,U,dy)
     w=solveEquations(P,L,U,dz)
@@ -133,7 +129,6 @@ def plotCubicSpline(U,V,W,x_axis,y_axis,z_axis):
         ax.scatter(xLinespace, yLinespace,zLinespace,color="red",s=0.01)
     if curveInterpolation:
         ax.plot(xLinespace, yLinespace,zLinespace,color="red")
-    print len(xLinespace),len(yLinespace),len(zLinespace)
     '''
     matched group, annotate it if unnecessary
     '''
