@@ -173,6 +173,7 @@ def doLUFactorization(matrix):
 
 '''
     input parameters
+    each linespace contians at least 3 elements
 '''
 x_axis = [1, 2, 3, 4]
 y_axis = [2, 3, 4, 5]
