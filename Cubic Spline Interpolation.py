@@ -34,6 +34,10 @@ fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
        
 def cubicSplineInterpolate(x_axis,y_axis,z_axis):
+    
+    '''
+        prepare right-side vector
+    '''
     dx=[]
     dy=[]
     dz=[]
@@ -43,8 +47,7 @@ def cubicSplineInterpolate(x_axis,y_axis,z_axis):
         dx.append(3*(x_axis[n]-2*x_axis[n-1]+x_axis[n-2]))
         dy.append(3*(y_axis[n]-2*y_axis[n-1]+y_axis[n-2]))
         dz.append(3*(z_axis[n]-2*z_axis[n-1]+z_axis[n-2]))
-        n=n+1
-        
+        n=n+1   
     '''
         produce square matrix looks like :
         [[2.0, 0.5, 0.0, 0.0], [0.5, 2.0, 0.5, 0.0], [0.0, 0.5, 2.0, 0.5], [0.0, 0.0, 2.0, 0.5]]
@@ -72,8 +75,6 @@ def cubicSplineInterpolate(x_axis,y_axis,z_axis):
         matrix[n-1].append(float(0))    
     matrix[n-1].append(float(0.5))    
     matrix[n-1].append(float(2))
-    
-
     '''
         LU Factorization may not be optimal method to solve this regular matrix.
         If you guys have better idea to solve the Equation, please contact me.
@@ -83,9 +84,7 @@ def cubicSplineInterpolate(x_axis,y_axis,z_axis):
     v=solveEquations(P,L,U,dy)
     w=solveEquations(P,L,U,dz)
     
-    '''
-        prepare right-side vector
-    '''
+    
     m=0
     U=[0]
     V=[0]
