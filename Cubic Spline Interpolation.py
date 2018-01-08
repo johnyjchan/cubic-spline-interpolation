@@ -109,8 +109,8 @@ def func(x1,x2,t,v1,v2,t1,t2):
 
 '''
     note: 
-    too many points interpolate points make your computer slack.
-    To interpolate large number of input parameters,
+    too many interpolate points make your computer slack.
+    To interpolate large amount of input parameters,
     please switch to ax.plot().
 '''
 def plotCubicSpline(U,V,W,x_axis,y_axis,z_axis):
