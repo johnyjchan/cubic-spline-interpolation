@@ -34,7 +34,6 @@ fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
        
 def cubicSplineInterpolate(x_axis,y_axis,z_axis):
-    
     '''
         prepare right-side vector
     '''
