@@ -145,22 +145,15 @@ def solveEquations(P,L,U,y):
     y1=np.dot(P,y)
     y2=y1
     m=0
-    while m<len(y):
-        n=0
-        while n<m:
-            y2[m]=y2[m]-y2[n]*L[m][n]
-            n=n+1
-        y2[m]=y2[m]/L[m][m]
-        m=m+1
-    y3=y2
-    m=len(y)-1
-    while m>=0:
-        n=len(y)-1
-        while n>m:
-            y3[m]=y3[m]-y3[n]*U[m][n]
-            n=n-1
-        y3[m]=y3[m]/U[m][m]
-        m=m-1
+    for m in range(0, len(y)):
+        for n in range(0, m):
+            y2[m] = y2[m] - y2[n] * L[m][n]
+        y2[m] = y2[m] / L[m][m]
+    y3 = y2
+    for m in range(len(y) - 1,-1,-1):
+        for n in range(len(y) - 1, m, -1):
+            y3[m] = y3[m] - y3[n] * U[m][n]
+        y3[m] = y3[m] / U[m][m]
     return y3
 
 '''
