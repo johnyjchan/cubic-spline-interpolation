@@ -7,7 +7,7 @@ Created on 2017/04/28
 @contact: chenyj@bcc.ac.cn
 
 Cubic Spline Interpolation provides numeric computing formula to interpolate curve.
-This source code was designed to draw a 3D curve.
+This source code was designed to draw a 3D curve through given points.
 If you have any question or optimized idea, welcome to contact me.
 
 '''
@@ -82,7 +82,9 @@ def cubicSplineInterpolate(x_axis,y_axis,z_axis):
     v=solveEquations(P,L,U,dy)
     w=solveEquations(P,L,U,dz)
     
-    
+    '''
+        define gradient of start/end point
+    '''
     m=0
     U=[0]
     V=[0]
