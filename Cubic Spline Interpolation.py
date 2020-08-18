@@ -78,7 +78,8 @@ def cubicSplineInterpolate(x_axis,y_axis,z_axis):
         If you guys have better idea to solve the Equation, please contact me.
         As the LU Factorization algorithm cost 2*n^3/3 + O(n^2) (e.g. Doolittle algorithm, Crout algorithm, etc).
         (How about Rx = Q'y using matrix = QR (Schmidt orthogonalization)?)
-        If your application field requires interpolating into constant number nodes, It is highly recommended to cache the P,L,U and reuse them.
+        If your application field requires interpolating into constant number nodes, 
+        It is highly recommended to cache the P,L,U and reuse them to get O(n^2) complexity.
     '''
     P, L, U = doLUFactorization(matrix)
     u=solveEquations(P,L,U,dx)
