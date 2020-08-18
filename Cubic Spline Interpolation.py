@@ -74,8 +74,11 @@ def cubicSplineInterpolate(x_axis,y_axis,z_axis):
     matrix[n-1].append(float(0.5))    
     matrix[n-1].append(float(2))
     '''
-        LU Factorization may not be optimal method to solve this regular matrix.
+        LU Factorization may not be optimal method to solve this regular matrix. 
         If you guys have better idea to solve the Equation, please contact me.
+        As the LU Factorization algorithm cost 3n^3/2 + O(n^2) (e.g. Doolittle algorithm, Crout algorithm, etc).
+        (How about Rx = Q'y using matrix = QR (Schmidt orthogonalization)?)
+        If your application field requires interpolating into constant number nodes, It is highly recommended to cache the P,L,U and reuse them.
     '''
     P, L, U = doLUFactorization(matrix)
     u=solveEquations(P,L,U,dx)
@@ -134,6 +137,9 @@ def plotCubicSpline(U,V,W,x_axis,y_axis,z_axis):
     ax.plot(x_axis,y_axis,z_axis,color="blue")
 
 '''
+    P stands for the permutation Matrix
+    L stands for the lower-triangle Matrix
+    U stands for the upper-triangle Matrix
     matrix·x = y
     P·matrix = L·U
     P·matrix·x = L·U·x = P·y
